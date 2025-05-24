@@ -7,7 +7,7 @@ estimator = Estimator(
     role='arn:aws:iam::485035621457:role/service-role/AmazonSageMaker-ExecutionRole-20250523T141470',
     instance_count=1,
     instance_type='ml.m5.2xlarge',
-    output_path='s3://bgilla/fs/',
+    output_path='s3://bgilla/fs/'
 )
 
 # Define hyperparameter ranges to search
