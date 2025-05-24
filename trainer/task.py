@@ -5,10 +5,9 @@ from sagemaker.estimator import Estimator
 estimator = Estimator(
     image_uri='485035621457.dkr.ecr.ap-northeast-2.amazonaws.com/bagelo:latest',
     role='arn:aws:iam::485035621457:role/service-role/AmazonSageMaker-ExecutionRole-20250523T141470',
-    instance_count=15,
+    instance_count=1,
     instance_type='ml.m5.2xlarge',
     output_path='s3://bgilla/fs/',
-    sagemaker_session=sagemaker_session
 )
 
 # Define hyperparameter ranges to search
@@ -27,8 +26,8 @@ tuner = HyperparameterTuner(
     objective_metric_name,
     hyperparameter_ranges,
     metric_definitions,
-    max_jobs=200,
-    max_parallel_jobs=10,
+    max_jobs=500,
+    max_parallel_jobs=50,
     strategy='Random'  # Enable random search
 )
 
