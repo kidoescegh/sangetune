@@ -3,11 +3,11 @@ from sagemaker.estimator import Estimator
 
 # Define your estimator (replace with your training image and settings)
 estimator = Estimator(
-    image_uri='485035621457.dkr.ecr.ap-northeast-2.amazonaws.com/bagelo:latest',
-    role='arn:aws:iam::485035621457:role/service-role/AmazonSageMaker-ExecutionRole-20250523T141470',
+    image_uri='206542257745.dkr.ecr.us-east-1.amazonaws.com/jancook:latest',
+    role='arn:aws:iam::206542257745:role/service-role/AmazonSageMaker-ExecutionRole-20250524T155904',
     instance_count=1,
     instance_type='ml.m5.2xlarge',
-    output_path='s3://bgilla/fs/'
+    output_path='s3://omna/oo/'
 )
 
 # Define hyperparameter ranges to search
@@ -32,4 +32,4 @@ tuner = HyperparameterTuner(
 )
 
 # Launch the tuning job with your training data channels
-tuner.fit({'train': 's3://bgilla/train/', 'validation': 's3://bgilla/valid/'})
+tuner.fit({'train': 's3://omna/oo/', 'validation': 's3://omna/valid/'})
